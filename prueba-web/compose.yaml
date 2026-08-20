@@ -1,0 +1,7 @@
+services:
+  web-prueba:
+    image: nginx:alpine
+    container_name: mi_servidor_prueba
+    restart: always
+    ports:
+      - "8080:80"
