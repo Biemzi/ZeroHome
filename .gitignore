@@ -8,3 +8,5 @@
 *.tmp
 *.log
 **/mysql/
+services/adguard/workdir
+services/adguard/confdir
