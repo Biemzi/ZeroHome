@@ -10,3 +10,5 @@
 **/mysql/
 services/adguard/workdir
 services/adguard/confdir
+services/nextcloud/app/
+services/nextcloud/db/
