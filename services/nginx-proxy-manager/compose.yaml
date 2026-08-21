@@ -1,0 +1,24 @@
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'     # Puerto web estándar (HTTP)
+      - '81:81'     # Panel de administración de Nginx
+      - '443:443'   # Puerto web seguro (HTTPS)
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    depends_on:
+      - db
+
+  db:
+    image: 'jc21/mariadb-aria:latest'
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'npm_root_password'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'npm'
+      MYSQL_PASSWORD: 'npm_password'
+    volumes:
+      - ./mysql:/var/lib/mysql
