@@ -1,0 +1,13 @@
+# Archivos de variables de entorno con contraseñas
+.env
+*.env
+
+# Datos y volúmenes locales
+data/
+*.db
+*.sqlite
+
+# Archivos del sistema y respaldos
+.DS_Store
+*.tmp
+*.log
